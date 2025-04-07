@@ -1,0 +1,31 @@
+.foot-nav{
+    padding: 20px  15px;
+}
+#foot-maxfiy{
+    font-size: 12px;
+}
+#navlink-txt{
+    font-size: 16px;
+}
+.network-nav{
+    display: none;
+}
+
+@media(max-width:700px){
+    .link-grp{
+        flex-direction: column;
+        gap: 2px;
+    }
+}
+
+@media(max-width:475px){
+    #foot-maxfiy, .link-grp{
+        display: none;
+    }
+    .network-nav{
+        display: block;
+    }
+    .network-btn-grp{
+        align-items: start;
+    }
+}

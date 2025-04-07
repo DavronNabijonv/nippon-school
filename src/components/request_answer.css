@@ -1,0 +1,29 @@
+@keyframes decrease{
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+.main-answer{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 22222;
+    width: 100%;
+    max-width: 300px;
+}
+.request-btn,.answer{
+    padding: 0 10px;
+}
+.animation{
+    border-radius: 3px;
+}
+.decrease-animation{
+    animation-delay: 5s;
+    animation: decrease 8s ease forwards;
+}
+.request-grp{
+    padding: 5px 0 0;
+}

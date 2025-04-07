@@ -1,6 +1,7 @@
 import React from "react";
 import Translater from "./translater";
 import "../App.css";
+import '../sections/modal/modal.css'
 
 export default function Text({
   txt,
