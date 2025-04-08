@@ -11,10 +11,12 @@ import { IoMdClose } from "react-icons/io";
 import Btn from "../../components/btn";
 
 export default function Modal_section({ close_func }) {
+  
   const { t } = useTranslation();
   const [value, setValue] = useState();
 
   useEffect(() => {
+
     AOS.init({
       duration: 1000, // animation duration
       once: true, // animation should happen only once

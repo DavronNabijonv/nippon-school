@@ -1,8 +1,8 @@
 .modal-overflow{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 2222;
+    z-index: 22222;
     top: 0;
     left: 0;
     background-color: rgba(128, 128, 128, 0.747);

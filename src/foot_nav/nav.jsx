@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
 import Text from "../components/txt";
-import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // images and icons
@@ -10,6 +9,7 @@ import en from "../assets/en.png";
 import ru from "../assets/ru.png";
 import uz from "../assets/uz.png";
 import { IoMenuSharp, IoClose } from "react-icons/io5";
+import { Link } from "react-scroll";
 
 export default function Navbar() {
   const [navTogle, setNavTogle] = useState(false);
@@ -26,16 +26,22 @@ export default function Navbar() {
     <div className="w-full">
       <div className="container">
         <div className="navbar flex justify-between items-center ">
-            
           <div className="logo flex gap-[5px] w-[200px] items-center ">
-            <NavLink to={"/home"}>
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              className="text-white cursor-pointer"
+            >
               <img
                 src={logo}
                 loading="lazy"
                 className="w-[100px]"
                 alt="logo image"
               />
-            </NavLink>
+            </Link>
             <Text txt="markaz" id_name="logo-txt" />
           </div>
 
@@ -82,65 +88,105 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="phoneNumbers">
-            <p className="text-gray-600 text-[16px] ">{`+998 (95) 325 5000 `}</p>
-            <p className="text-gray-600 text-[16px] ">{`+998 (90) 447 7000 `}</p>
-          </div>
+          <a href="tel:+998953255000" target="_blank">
+            <div className="phoneNumbers">
+              <p className="text-gray-600 text-[16px] ">{`+998 (95) 325 5000 `}</p>
+              <p className="text-gray-600 text-[16px] ">{`+998 (90) 447 7000 `}</p>
+            </div>
+          </a>
 
-          <div className={navTogle?'phone-navbar active':"phone-navbar"} >
-            <div onClick={handleTogle} className="w-full text-[35px] flex justify-end " >
+          <div className={navTogle ? "phone-navbar active" : "phone-navbar"}>
+            <div
+              onClick={handleTogle}
+              className="w-full text-[35px] flex justify-end "
+            >
               <IoClose />
             </div>
             <div className="phone-links text-center flex flex-col gap-[30px] ">
               <LinksGroup hovBool={false} navTogleBtn={handleTogle} />
             </div>
-            <div className="phoneNav-numbers" onClick={handleTogle} >
+            <div className="phoneNav-numbers" onClick={handleTogle}>
               <p className="text-gray-600 text-[16px] ">{`+998 (95) 325 5000 `}</p>
               <p className="text-gray-600 text-[16px] ">{`+998 (90) 447 7000 `}</p>
             </div>
           </div>
         </div>
       </div>
-      <div className={navTogle?" overflow active ":"overflow"} onClick={handleTogle} ></div>
+      <div
+        className={navTogle ? " overflow active " : "overflow"}
+        onClick={handleTogle}
+      ></div>
     </div>
   );
 }
 
-function LinksGroup({hovBool,navTogleBtn}) {
+function LinksGroup({ hovBool, navTogleBtn }) {
   return (
     <>
-      <NavLink to={"/negabiz"} onClick={navTogleBtn} >
+      <Link
+        to="negabiz"
+        smooth={true}
+        duration={500}
+        spy={true}
+        offset={-80}
+        className="text-white cursor-pointer"
+        onClick={navTogleBtn}
+      >
         <Text
           txt="nega_biz"
           id_name="navlink-txt"
           t_hover={hovBool}
           t_color="text-gray-600"
         />
-      </NavLink>
-      <NavLink to={"/natija"} onClick={navTogleBtn} >
+      </Link>
+      <Link
+        to="natija"
+        smooth={true}
+        duration={500}
+        spy={true}
+        offset={-80}
+        className="text-white cursor-pointer"
+        onClick={navTogleBtn}
+      >
         <Text
           txt="natijalar"
           id_name="navlink-txt"
           t_hover={hovBool}
           t_color="text-gray-600"
         />
-      </NavLink>
-      <NavLink to={"/kurslar"} onClick={navTogleBtn} >
+      </Link>
+      <Link
+        to="kurslar"
+        smooth={true}
+        duration={500}
+        spy={true}
+        offset={-80}
+        className="text-white cursor-pointer"
+        onClick={navTogleBtn}
+      >
         <Text
           txt="kurslar"
           id_name="navlink-txt"
           t_hover={hovBool}
           t_color="text-gray-600"
         />
-      </NavLink>
-      <NavLink to={"/savollar"} onClick={navTogleBtn} >
+      </Link>
+      <Link
+        to="savollar"
+        smooth={true}
+        duration={500}
+        spy={true}
+        offset={-80}
+        className="text-white cursor-pointer"
+        onClick={navTogleBtn}
+      >
         <Text
           txt="savollar"
           id_name="navlink-txt"
           t_hover={hovBool}
           t_color="text-gray-600"
         />
-      </NavLink>
+      </Link>
     </>
   );
 }
