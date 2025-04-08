@@ -17,6 +17,8 @@ import Result_section from "./sections/result_section";
 import Styde_center from "./sections/styde_center";
 import Univer_section from "./sections/univer_section";
 
+import loadimg from './assets/loading.svg'
+
 export const Modal_togle = React.createContext();
 export const Request_ans = React.createContext();
 export const Answer_gender = React.createContext();
@@ -25,6 +27,7 @@ function App() {
   const [modalTogle, setModalTogle] = useState(false);
   const [requestAns, setRequestAns] = useState(false);
   const [answerType, setAnswerType] = useState(Boolean);
+  const [closeLoad,setCloseLoad] = useState(true);
 
   // for close answer request pop up
   useEffect(() => {
@@ -32,11 +35,17 @@ function App() {
       setTimeout(() => setRequestAns(false), 8000);
     }
   }, [requestAns]);
+  useEffect(()=>{
+    setTimeout(() => setCloseLoad(false), 8000);
+  },[])
 
   return (
     <Modal_togle.Provider value={{ modalTogle, setModalTogle }}>
       <Request_ans.Provider value={{ requestAns, setRequestAns }}>
         <Answer_gender.Provider value={{ answerType, setAnswerType }}>
+          {closeLoad&&(<div className="loading">
+            <img src={loadimg} className="  max-w-[300px] w-[100%] h-auto " loading="lazy" alt="load image" />
+          </div>)}
           <div className="opacity ">
             <header>
               <Navbar />
