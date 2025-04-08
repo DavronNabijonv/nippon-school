@@ -85,7 +85,7 @@ export default function Modal_section({ close_func }) {
             <input
               type="text"
               name="telegramUser"
-              placeholder={t("ismingiz")}
+              placeholder={t("telegram")}
               className="modal-input rounded-[8px] border-[1px] border-gray-500 "
             />
             <PhoneInput
