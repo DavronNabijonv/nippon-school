@@ -36,7 +36,7 @@ export default function Kurs_swiper() {
         <SwiperSlide>
           <img
             src={news1}
-            className=" swiper-img rounded-[28px] "
+            className=" swiper-img rounded-[28px]  "
             loading="lazy"
             alt="news images"
           />
@@ -44,7 +44,7 @@ export default function Kurs_swiper() {
         <SwiperSlide>
           <img
             src={news2}
-            className="rounded-[28px] w-[100%] h-[500px] "
+            className=" swiper-img rounded-[28px] w-[100%] h-[500px] "
             loading="lazy"
             alt="news images"
           />
@@ -52,7 +52,7 @@ export default function Kurs_swiper() {
         <SwiperSlide>
           <img
             src={news3}
-            className="rounded-[28px] w-[100%] h-[500px] "
+            className=" swiper-img rounded-[28px] w-[100%] h-[500px] "
             loading="lazy"
             alt="news images"
           />
