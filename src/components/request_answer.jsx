@@ -17,7 +17,7 @@ export default function Request_answer({ answer_type , close_func }) {
   
   return (
     <div className = "main-answer" >
-      <div data-aos="fade-left">
+      <div data-aos="fade-left" data-aos-delay="800" >
         <div className=" request-grp rounded-[8px] max-w-[280px] w-[100%] flex flex-col gap-[5px] bg-white ">
           <button onClick={close_func} className=" request-btn border-none text-gray-800 text-[18px] text-black w-[100%] text-right flex justify-end ">
             <IoMdClose />

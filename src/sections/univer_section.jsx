@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Marquee from "react-fast-marquee";
 import Swiper_card_univer from "../components/swiper_card_univer";
 import Text from "../components/txt";
@@ -9,8 +9,11 @@ import univ1 from "../assets/tokyo_univer.jpg";
 import univ2 from "../assets/pacific-univer.jpg";
 import univ3 from "../assets/ecenomik_univer.png";
 import Btn from "../components/btn";
+import { Modal_togle } from "../App";
 
 export default function Univer_section() {
+  const { setModalTogle } = useContext(Modal_togle);
+
   return (
     <div className="univer-section flex flex-col justify-center items-center gap-[18px] ">
       <Text txt="grantga-yordam" id_name="univer-section-title" />
@@ -153,8 +156,11 @@ export default function Univer_section() {
         />
       </Marquee>
 
-        <Btn txt='boglanish' id_name='univer-section-btn' />
-
+      <Btn
+        txt="boglanish"
+        id_name="univer-section-btn"
+        togle_functions={() => setModalTogle(true)}
+      />
     </div>
   );
 }

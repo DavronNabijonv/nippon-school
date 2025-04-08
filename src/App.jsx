@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Request_answer from "./components/request_answer";
 import Foot from "./foot_nav/foot";
@@ -19,59 +19,75 @@ import Univer_section from "./sections/univer_section";
 
 export const Modal_togle = React.createContext();
 export const Request_ans = React.createContext();
+export const Answer_gender = React.createContext();
 
 function App() {
   const [modalTogle, setModalTogle] = useState(false);
   const [requestAns, setRequestAns] = useState(false);
+  const [answerType, setAnswerType] = useState(Boolean);
+
+  // for close answer request pop up
+  useEffect(() => {
+    if (requestAns) {
+      setTimeout(() => setRequestAns(false), 8000);
+    }
+  }, [requestAns]);
 
   return (
-    <Modal_togle.Provider>
-      <Request_ans.Provider>
-        <div className="opacity ">
-          <navbar>
-            <Navbar />
-          </navbar>
+    <Modal_togle.Provider value={{ modalTogle, setModalTogle }}>
+      <Request_ans.Provider value={{ requestAns, setRequestAns }}>
+        <Answer_gender.Provider value={{ answerType, setAnswerType }}>
+          <div className="opacity ">
+            <header>
+              <Navbar />
+            </header>
 
-          
+            <section id="home">
+              <Home_section />
+            </section>
 
-          <section id="home">
-            <Home_section />
-          </section>
+            <News />
+            <Styde_center />
+            <Get_results />
+            <Grant_100 />
 
-          <News />
-          <Styde_center />
-          <Get_results />
-          <Grant_100 />
+            <section id="natija">
+              <Result_section />
+            </section>
 
-          <section id="natija">
-            <Result_section />
-          </section>
+            <Univer_section />
 
-          <Univer_section />
+            <section id="kurslar">
+              <Kurs_section />
+            </section>
 
-          <section id="kurslar">
-            <Kurs_section />
-          </section>
+            <Licence />
+            <section id="negabiz">
+              <For_section />
+            </section>
 
-          <Licence />
-          <section id="negabiz">
-            <For_section />
-          </section>
+            <section id="savollar">
+              <Faq />
+            </section>
 
-          <section id="savollar">
-            <Faq />
-          </section>
+            <section id="contact">
+              <Contact />
+            </section>
 
-          <section id="contact">
-            <Contact />
-          </section>
-
-          <footer>
-            <Foot />
-          </footer>
-        </div>
-        {modalTogle&&<Modal_section />}
-        {requestAns&&<Request_answer/>}
+            <footer>
+              <Foot />
+            </footer>
+          </div>
+          {modalTogle && (
+            <Modal_section close_func={() => setModalTogle(false)} />
+          )}
+          {requestAns && (
+            <Request_answer
+              close_func={() => setRequestAns(false)}
+              answer_type={answerType}
+            />
+          )}
+        </Answer_gender.Provider>
       </Request_ans.Provider>
     </Modal_togle.Provider>
   );

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Btn from "../components/btn";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import Text from "../components/txt";
-import '../App.css';
+import "../App.css";
+import { Answer_gender, Request_ans } from "../App";
 
 export default function Contact() {
-
-    const { t } = useTranslation();
+  const { t } = useTranslation();
+  const { setAnswerType } = useContext(Answer_gender);
+  const { setRequestAns } = useContext(Request_ans);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -27,11 +29,15 @@ export default function Contact() {
         text: info_user,
       })
       .then(() => {
-        alert("Muvaffaqiyatli yuborildi!!!");
+        setAnswerType(true);
       })
       .catch((error) => {
         console.error("Yuborishda xatolik:", error);
+        setAnswerType(false);
       });
+
+    // show Request_answer componenet
+    setRequestAns(true);
   };
 
   return (
@@ -39,10 +45,10 @@ export default function Contact() {
       <div className="container">
         <div className="contact-grp flex justify-around items-center flex-wrap gap-[20px] ">
           <div className="contact-txt-grp flex flex-col gap-[20px] ">
-            <Text txt='savol-title' id_name='savol-title' />
-            <Text txt='savol-txt' id_name='savol-txt' />
+            <Text txt="savol-title" id_name="savol-title" />
+            <Text txt="savol-txt" id_name="savol-txt" />
           </div>
-          <form action="" className="contact-form flex flex-col gap-[20px] ">
+          <form onSubmit={sendMessage} className="contact-form flex flex-col gap-[20px] ">
             <input
               type="text"
               name="name" // Changed from id to name
@@ -57,7 +63,7 @@ export default function Contact() {
               className=" contact-input bg-[#b5e7bb] text-white rounded-[50px] "
               required
             />
-            <Btn txt="savol-btn" id_name='contact-btn' />
+            <Btn txt="savol-btn" id_name="contact-btn" />
           </form>
         </div>
       </div>

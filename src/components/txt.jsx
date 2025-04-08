@@ -10,11 +10,11 @@ export default function Text({
   t_color = "text-zinc-900",
 }) {
   return (
-    <p
+    <div
       id={id_name}
       className={`${t_color} ${t_hover ? `hover:text-green-300` : ""}  `}
     >
       <Translater txt={txt} />
-    </p>
+    </div>
   );
 }
