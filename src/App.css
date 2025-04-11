@@ -445,7 +445,8 @@
   line-height: 24px;
 }
 .contact-form{
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
 }
 .contact-input{
   padding: 15px 35px;
@@ -485,6 +486,7 @@
 @media (max-width: 990px) {
   #home-title {
     font-size: 16px;
+    padding-left: 0;
   }
   #home-txt {
     font-size: 33px;
@@ -499,8 +501,13 @@
   .before-grp .before {
     font-size: 17px;
     line-height: 18px;
+    margin-left: 0;
+  }
+  .before-grp .before:nth-child(2) {
+    width: 250px;
   }
   .before-grp .before::before {
+    content: none;
     top: 10px;
   }
 }
@@ -654,11 +661,11 @@
     color: black;
     font-size: 15px;
     font-weight: 600;
-    width: 200px;
-    margin-left: 30px;
+    width: 250px;
+    margin-left: 0px;
   }
   .before-grp .before:nth-child(1) {
-    margin-left: -15px;
+    margin-left: 0px;
   }
   .before-grp .before::before {
     top: 10px;
@@ -830,7 +837,7 @@
 }
 
 /* navbar , home , get-result ,
- grant-100 , faq section */
+ grant-100 , faq section , stude-center */
 @media (max-width: 480px) {
   /* navbar */
   .phone-navbar {
@@ -842,7 +849,7 @@
 
   /* home */
   #home-title {
-    padding-left: 20px;
+    padding-left: 0px;
   }
   #home-txt {
     font-size: 22px;
@@ -850,10 +857,10 @@
   .before-grp .before {
     font-size: 14px;
     width: 250px;
-    margin-left: 10px;
+    margin-left: 0px;
   }
   .before-grp .before:nth-child(1) {
-    margin-left: 15px;
+    margin-left: 0px;
   }
   .before-grp .before::before {
     top: 10px;
@@ -894,16 +901,21 @@
     font-size: 13px;
     line-height: 20px;
   }
+
+  /* study-center */
+  .styde-card #styde-txt {
+    font-size: 14px;
+  }
 }
 
-/* swiper kurs card */
+/* swiper kurs card  */
 @media (max-width: 450px) {
   #kurs-swiper .swiper-wrapper {
     margin-left: 2vw;
   }
 }
 
-/* swiper kurs  */
+/* swiper kurs , for section */
 @media (max-width: 410px) {
   .kurs-card {
     width: 280px;
@@ -933,11 +945,23 @@
   #kurs-swiper .swiper-wrapper {
     margin-left: 0;
   }
+
+  /* for section */
+  .for-card {
+    height: 270px;
+  }
+  #for-card-title {
+    font-size: 22px;
+  }
+  #for-card-txt {
+    font-size: 16px;
+  }
 }
 
-/* styde center */
+/* styde center  */
 @media (max-width: 308px) {
   .styde-card #styde-txt {
     width: 70vw;
   }
+ 
 }

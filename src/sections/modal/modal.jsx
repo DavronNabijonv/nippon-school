@@ -44,6 +44,7 @@ export default function Modal_section({ close_func }) {
       })
       .then(() => {
         setAnswerType(true);
+        event.target.reset(); 
       })
       .catch((error) => {
         console.error("Yuborishda xatolik:", error);
