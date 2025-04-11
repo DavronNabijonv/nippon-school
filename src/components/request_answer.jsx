@@ -6,6 +6,7 @@ import "./request_answer.css";
 import { IoMdClose } from "react-icons/io";
 import { MdError } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
+import Text from "./txt";
 
 export default function Request_answer({ answer_type , close_func }) {
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function Request_answer({ answer_type , close_func }) {
             >
               {answer_type ? <FaCheck /> : <MdError />}
             </span>
-            {answer_type ? "Successfuly" : "Error"}
+            {answer_type ? <Text txt='succes' /> : <Text txt='error' />}
           </div>
           <div
             className={`animation h-[5px] ${

@@ -49,6 +49,9 @@
     "n3-davomiyligi":"Davomiyligi: 10 oy",
     "royhat":"RO`YHATDAN O`TISH",
     "pul":"500 000 so`m/oy",
+    "litsenziya":"Litsenziya",
+    "litsenziya-title":"Markazimiz O‘zbekiston Respublikasi qonunchiligiga muvofiq litsenziyalangan.",
+    "litsenziya-txt":"Bizning Nippon o‘quv markazimiz xususiy ta’lim muassasasi bo‘lib, maktabdan tashqari faoliyatni amalga oshirish uchun litsenziyaga ega va qonun hujjatlariga muvofiq litsenziyaga ega. Bu shuni anglatadiki, siz bizga ishonishingiz mumkin va hamma narsa qonuniydir.",
     "nega-nippon":"Nima uchun aynan Nippon Study Center?",
     "nega-nippon1-title":"O'qish vizasini olish kafolati 100%",
     "nega-nippon1-txt":"Biz bilan orzuyingizdagi ta'lim imkoniyatiga ega bo'ling!",
@@ -89,6 +92,8 @@
     "maxfiy" :"Maxfiylik siyosati",
     "modal-title":"O'z ma'lumotlaringizni qoldiring",
     "modal-txt":"Sizga to'liqroq ma'lumot berish uchun mutaxassislarimiz siz bilan bog'lanishadi",
-    "telegram":"Telegram username (@test)"
+    "telegram":"Telegram username (@test)",
+    "succes":"Muvaffaqiyatli",
+    "error":"Xatolik"
 }
 

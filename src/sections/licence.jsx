@@ -3,11 +3,12 @@ import "../App.css";
 
 // image
 import litsenziya from "../assets/litsenziya.jpg";
+import Text from "../components/txt";
 
 export default function Licence() {
   return (
     <div className="licence flex flex-col gap-[20px] ">
-      <p className="licence-title">License</p>
+      <p className="licence-title"><Text txt='litsenziya' /></p>
       <div className="container">
         <div className="licence-grp flex justify-between items-center ">
           <div className=" shadow-img ">
@@ -20,14 +21,10 @@ export default function Licence() {
           </div>
           <div className="licence-txt-grp max-w-[600px] w-full flex flex-col gap-[15px] ">
             <p className="licence-txt-grp-title">
-              Our center is licensed in accordance with the legislation of the
-              Republic of Uzbekistan
+              <Text txt='litsenziya-title' />
             </p>
             <p className="licence-txt">
-              Our Nippon Learning Center is a private educational institution
-              licensed to conduct extracurricular activities and licensed in
-              accordance with the law. This means that you can trust us and
-              everything is legal.
+            <Text txt='litsenziya-txt' />
             </p>
           </div>
           <div className="img-grp">
