@@ -30,6 +30,7 @@ export default function Contact() {
       })
       .then(() => {
         setAnswerType(true);
+        event.target.reset(); 
       })
       .catch((error) => {
         console.error("Yuborishda xatolik:", error);
